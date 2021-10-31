@@ -166,7 +166,7 @@ if($error){
                         </span>
                       </div>
                       <input type="email" class="form-control form-control-lg border-left-0"name = "email" id="email"
-                      placeholder="email" value = "<?php if(isset($_POST['email'])){echo $_POST['email']; }?>">
+                      placeholder="email " value = "<?php if(isset($_POST['email'])){echo $_POST['email']; }?>">
                     </div>
                     <span class = "error"><?php echo $emailErr ?></span>
                   </div>
