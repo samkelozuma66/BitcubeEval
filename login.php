@@ -4,6 +4,7 @@ include 'config.php';
 include 'error.php';
 
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
     if(empty($_POST['email'])){
       $emailErr = "please input email";
     }
@@ -172,7 +173,14 @@ include 'error.php';
       var email = localStorage.getItem("email");
       var password = localStorage.getItem("password");
 
-      if (email !== "" && email !== null) 
+      const queryString = window.location.search;
+
+      const urlParams = new URLSearchParams(queryString);
+
+      const logout = urlParams.get('logout')
+
+      
+      if (email !== "" && email !== null && logout == null) 
       {
         if (password !== "" && password !== null) 
         {

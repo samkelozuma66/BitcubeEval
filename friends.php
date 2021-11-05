@@ -124,9 +124,9 @@ if($error){
       window.location.href='login.php?logout=true';
 
     }
-    function friends()
+    function profile()
     {
-      window.location.href='friends.php';
+      window.location.href='profile.php';
 
     }
   </script>
@@ -139,59 +139,16 @@ if($error){
             <div class="col-lg-6 d-flex align-items-center justify-content-center">
               <div class="auth-form-transparent text-left p-3">
                 <div class="my-7">
-                    <button id="profile" class="btn btn-block btn-gradient-info btn-sm font-weight-SMALL auth-form-btn" >PROFILE</button>
-                    <button id="friends" onclick="friends()" class="btn btn-block btn-gradient-primary btn-sm font-weight-SMALL auth-form-btn" >FRIENDS</button>
+                    <button id="profile" onclick="profile()" class="btn btn-block btn-gradient-primary btn-sm font-weight-SMALL auth-form-btn" >PROFILE</button>
+                    <button id="friends" class="btn btn-block btn-gradient-info btn-sm font-weight-SMALL auth-form-btn" >FRIENDS</button>
                     <button id="logout" onclick="logout()" class="btn btn-block btn-gradient-primary btn-sm font-weight-medium auth-form-btn" >LOGOUT</button>
                   </div>
                 
                 <div class="brand-logo" >
-                  <h1>PROFILE</h1>
+                  <h1>FRIENDS</h1>
                 </div>
                 <h4>Welcome back! <?php if(isset($_SESSION['first_name'])){echo $_SESSION['first_name']; }?></h4>
                 <form class="pt-3" method = 'post'>
-                  <div class="form-group">
-                    <label for="exampleInputEmail">First Name</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend bg-transparent">
-                        <span class="input-group-text bg-transparent border-right-0">
-                          <i class="mdi mdi-account-outline text-primary"></i>
-                        </span>
-                      </div>
-                      <input type="text" class="form-control form-control-lg border-left-0" name = "first_name" id="first_name"
-                       placeholder="Firstname" value = "<?php if(isset($_SESSION['first_name'])){echo $_SESSION['first_name']; }?>" disabled>
-                    </div>
-                    <span class = "error"><?php echo $fnameErr ?></span>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail">Last Name</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend bg-transparent">
-                        <span class="input-group-text bg-transparent border-right-0">
-                          <i class="mdi mdi-account-outline text-primary"></i>
-                        </span>
-                      </div>
-                      <input type="text" class="form-control form-control-lg border-left-0" name = "last_name" id="last_name"
-                       placeholder="Lastname" value = "<?php if(isset($_SESSION['last_name'])){echo $_SESSION['last_name']; }?>" disabled>
-                    </div>
-                    <span class = "error"><?php echo $nameErr ?></span>
-                  </div>
-				          <div class="form-group">
-                    <label>Email</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend bg-transparent">
-                        <span class="input-group-text bg-transparent border-right-0">
-                          <i class="mdi mdi-email-outline text-primary"></i>
-                        </span>
-                      </div>
-                      <input type="email" class="form-control form-control-lg border-left-0"name = "email" id="email"
-                      placeholder="email " value = "<?php if(isset($_SESSION['email'])){echo $_SESSION['email']; }?>" disabled>
-                    </div>
-                    <span class = "error"><?php echo $emailErr ?></span>
-                  </div>
-                  
-                  <!--<div class="my-3">
-                    <button type = "submit" name = "sendMail" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" >CREATE  ACCOUNT</button>
-                  </div>-->
                   
                 </form>
               </div>
